@@ -17,7 +17,7 @@ export const getAllProducts = async () => {
   }
 };
 
-export const getProductsById = async (id: string) => {
+export const getProductsById = async (id: number) => {
   try {
     const res = await api.get(`/products/${id}`);
     const product: Product = res.data;
@@ -49,7 +49,7 @@ export const deleteProduct = async (id: number) => {
   }
 };
 
-export const createProduct = async (product: Product) => {
+export const createProduct = async (product: Omit<Product,"id">) => {
   try {
     const res = await api.post(`/products`, product);
     return res.data;
@@ -58,9 +58,9 @@ export const createProduct = async (product: Product) => {
   }
 };
 
-export const updateProduct = async (id: number, product: Product) => {
+export const updateProduct = async (id: number, updateProduct: Partial<Product>) => {
   try {
-    const res = await api.put(`/products/${id}`, product);
+    const res = await api.put(`/products/${id}`, updateProduct);
     return res.data;
   } catch (err) {
     console.log(err);
