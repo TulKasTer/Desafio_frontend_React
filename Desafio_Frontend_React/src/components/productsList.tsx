@@ -171,7 +171,7 @@ export default function ProductList() {
                           {editingId === product.id ? (
                             <button
                               type="button"
-                              onClick={handleSave}
+                              onClick={async () => {await handleSave(); window.location.reload()}}
                               className="text-green-600 hover:text-green-800"
                             >
                               💾 Guardar
@@ -202,9 +202,7 @@ export default function ProductList() {
                         <td className="px-4 py-2">
                           <button
                             type="button"
-                            onClick={() => {
-                              handleDelete(product.id);
-                            }}
+                            onClick={ async() => {await handleDelete(product.id); window.location.reload()}}
                             className="text-red-600 hover:text-red-800"
                           >
                             {/* Icono eliminar */}
