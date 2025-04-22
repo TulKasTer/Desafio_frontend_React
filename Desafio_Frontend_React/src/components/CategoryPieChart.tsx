@@ -9,7 +9,7 @@ interface CategoryData {
   value: number;
 }
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#AA00FF", "#F44336", "#00B8D9"];
+const COLORS = ["#102E50", "#F5C45E", "#E78B48", "#BE3D2A", "#88304E", "#F7374F", "#FE7743"];
 
 const CategoryPieChart = () => {
   const [data, setData] = useState<CategoryData[]>([]);

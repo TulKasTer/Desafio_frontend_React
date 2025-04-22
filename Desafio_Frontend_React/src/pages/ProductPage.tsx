@@ -1,15 +1,15 @@
 import ProductsForm from "../components/productsForm";
 import ProductList from "../components/productsList";
-import CategoryPieChart from "../components/CategoryPieChart"; // 👈 importa el gráfico
+import CategoryPieChart from "../components/CategoryPieChart";
+import ProductQuantityBarChart from "../components/ProductQuantityBarChart"; // 👈 nuevo
 
-interface Props {}
-
-const ProductPage = (props: Props) => {
+const ProductPage = () => {
   return (
     <>
       <ProductsForm />
       <ProductList />
-      <CategoryPieChart /> {/* 👈 aquí se muestra la gráfica */}
+      <CategoryPieChart />
+      <ProductQuantityBarChart /> {/* 👈 aquí se muestra la gráfica de barras */}
     </>
   );
 };
