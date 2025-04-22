@@ -72,10 +72,6 @@ const ProductPage = (props: Props) => {
                   <th className="px-4 py-2">Descripcion</th>
                   <th className="px-4 py-2">Precio</th>
                   <th className="px-4 py-2">Cantidad</th>
-                  <th className="px-4 py-2">Categoria ID</th>
-                  <th className="px-4 py-2">Proveedor ID</th>
-                  <th className="px-4 py-2">Creacion del registro</th>
-                  <th className="px-4 py-2">Modificacion de registro</th>
                   <th className="px-4 py-2">Modify</th>
                   <th className="px-4 py-2">Delete</th>
                 </tr>
@@ -96,8 +92,6 @@ const ProductPage = (props: Props) => {
                     <td className="px-4 py-2">{product.Descripcion}</td>
                     <td className="px-4 py-2">{product.Precio}</td>
                     <td className="px-4 py-2">{product.Cantidad}</td>
-                    <td className="px-4 py-2">{product.categoryId}</td>
-                    <td className="px-4 py-2">{product.supplierId}</td>
                     <td className="px-4 py-2">
                       <button
                         type="button"
@@ -125,8 +119,7 @@ const ProductPage = (props: Props) => {
                       <button
                         type="button"
                         onClick={() =>
-                          confirm("Delete the product?") &&
-                          handleDelete(product.id)
+                          {handleDelete(product.id)}
                         }
                         className="text-red-600 hover:text-red-800"
                       >
@@ -158,10 +151,6 @@ const ProductPage = (props: Props) => {
                   <th className="px-4 py-2">Descripcion</th>
                   <th className="px-4 py-2">Precio</th>
                   <th className="px-4 py-2">Cantidad</th>
-                  <th className="px-4 py-2">Categoria ID</th>
-                  <th className="px-4 py-2">Proveedor ID</th>
-                  <th className="px-4 py-2">Creacion del registro</th>
-                  <th className="px-4 py-2">Modificacion de registro</th>
                   <th className="px-4 py-2">Modify</th>
                   <th className="px-4 py-2">Delete</th>
                 </tr>

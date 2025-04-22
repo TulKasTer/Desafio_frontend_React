@@ -7,11 +7,11 @@ import { Product } from "my-types";
 
 export const getAllProducts = async () => {
   try {
-    const res = await api.get(`/products`);
+    const res = await api.get(`/products`,{headers:{"Cache-Control": "no-cache"}});
 
-    const products: Product[] = res.data.payload;
+    // const products: Product[] = res.data.payload;
 
-    return products;
+    return res.data;
   } catch (err) {
     console.log(err);
   }
@@ -20,7 +20,7 @@ export const getAllProducts = async () => {
 export const getProductsById = async (id: string) => {
   try {
     const res = await api.get(`/products/${id}`);
-    const product: Product = res.data.payload;
+    const product: Product = res.data;
 
     return product;
   } catch (err) {
@@ -40,7 +40,7 @@ export const getProductsByCategory = async (category: string) => {
 
 export const deleteProduct = async (id: number) => {
   try {
-    const res = await api.delete(`/products`, {
+    const res = await api.delete(`/products/${id}`, {
       data: { id },
     });
     return res.data;
